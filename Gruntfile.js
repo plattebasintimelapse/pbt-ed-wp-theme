@@ -1,6 +1,9 @@
 module.exports = function(grunt) {
 
-    // Project configuration.
+    var config = {
+        assets: 'assets'
+    };
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -24,7 +27,7 @@ module.exports = function(grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: 'sass',
+                    cwd: '<%= config.assets %>/sass',
                     src: ['*.scss'],
                     dest: '',
                     ext: '.css'
